@@ -23,7 +23,7 @@ $ ddt
 
 ### Mac
 
-Instal XQuartz on your laptop. If you already have it installed then make sure that you have the latest version by opening
+Install XQuartz on your laptop. If you already have it installed then make sure that you have the latest version by opening
 XQuartz and choosing "XQuartz" in the menu then "Check for X11 Updates ...".
 
 With XQuartz running, run the following commands in a terminal (/Applications/Utilities/Terminal):
