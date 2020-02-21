@@ -44,6 +44,7 @@ If the directions above fail and you have an acount on Tiger, Della or Perseus, 
 
 ```bash
 $ ssh -Y <YourNetID>@tigressdata.princeton.edu
+# start a terminal by clicking on the small black square icon in the menu
 $ eog
 # if a window appears then you can do the hands-on GUI exercises
 ```
