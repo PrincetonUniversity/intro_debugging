@@ -17,7 +17,7 @@ This guide provides materials for learning how to debug interpreted (Python, R) 
 [Arm DDT Video Tutorials](https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos)   
 
 ## Workshop Survey
-Please complete [this survey](https://forms.gle/XYXeVKLVyWCTtBFX8) toward the end of the workshop.
+Please complete [this survey](https://forms.gle/Lyr9zocAQ6urCq6g9) toward the end of the workshop.
 
 <!--
 ## Useful Links
