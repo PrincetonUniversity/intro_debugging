@@ -40,7 +40,7 @@ Try using [MobaXterm](https://mobaxterm.mobatek.net/) (Home Edition). Visit the 
 
 ## TurboVNC
 
-If the directions above fail and you have an acount on Tiger, Della or Perseus, then consider installing [TurboVNC](https://researchcomputing.princeton.edu/faq/how-do-i-use-vnc-on-tigre). In this case your goal is to use graphical applications on tigressdata instead of adroit. Visit the [OIT Tech Store](https://princeton.service-now.com/snap?id=kb_article&sys_id=ea2a27064f9ca20018ddd48e5210c771) for resolving issues with installing and configuring this software.
+If the directions above fail and you have an acount on Tiger, Della or Perseus, then consider installing [TurboVNC](https://researchcomputing.princeton.edu/faq/how-do-i-use-vnc-on-tigre). In this case your goal is to use graphical applications on tigressdata. Visit the [OIT Tech Store](https://princeton.service-now.com/snap?id=kb_article&sys_id=ea2a27064f9ca20018ddd48e5210c771) for resolving issues with installing and configuring this software.
 
 ```bash
 $ ssh -Y <YourNetID>@tigressdata.princeton.edu
