@@ -48,3 +48,15 @@ $ ssh -Y <YourNetID>@tigressdata.princeton.edu
 $ eog
 # if a window appears then you can do the hands-on GUI exercises
 ```
+
+## Clone the Repo on Adroit
+
+For Linux and Mac users:
+
+```bash
+$ ssh -X adroit
+$ cd /scratch/network/<YourNetID>    # or /scratch/gpfs on Perseus, Della, Tiger
+$ git clone https://github.com/PrincetonUniversity/intro_debugging
+```
+
+Windows users should connect using MobaXterm (Home Edition) or WSL.
