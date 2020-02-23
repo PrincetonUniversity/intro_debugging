@@ -57,6 +57,7 @@ For Linux and Mac users:
 $ ssh -X adroit
 $ cd /scratch/network/<YourNetID>    # or /scratch/gpfs on Perseus, Della, Tiger
 $ git clone https://github.com/PrincetonUniversity/intro_debugging
+$ module load anaconda3
 ```
 
 Windows users should connect using MobaXterm (Home Edition) or WSL.
