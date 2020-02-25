@@ -483,6 +483,10 @@ If you encounter an error then put `%debug` in a cell to use iPDB.
 
 Note that you can use `nbconvert` to convert a Jupyter notebook to a flat Python script. On can then use the debugger in PyCharm, for example, to do more advanced debugging.
 
+## PyCharm
+
+A popular Python IDE is [PyCharm](https://www.jetbrains.com/pycharm/). Try running the code above using PyCharm's graphical debugger interface.
+
 ## Using the PyCharm Debugger on the HPC Clusters
 
 The video below explains how to run the PyCharm debugger on a TigerGPU node. The same procedure can be used for the other clusters.
