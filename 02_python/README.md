@@ -175,7 +175,7 @@ using the `print` and `step` commands. In order to fully take advantage of `brea
 
 See the `browser()` function in R for something analogous to Python's `breakpoint()`.
 
-## PDB on the Command Line
+## Command Line Debugging with PDB
 
 PDB is the Python debug engine. It can be used directly on the command line or through an IDE like PyCharm or Spider.
 
