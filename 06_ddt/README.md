@@ -1,21 +1,19 @@
 # ARM DDT
 
-DDT is a parallel debugger produced by ARM as part of ARM Forge. It is based on GDB.
+DDT is a graphical debugger produced by ARM as part of ARM Forge. It is based on GDB. DDT can be used for serial, parallel and GPU codes.
 
-## General Procedure for Debugging a Compiled Code
+## Serial Code
 
-- Rebuild with `-g -O0`
-- Run the code
-- Run the code with a debugger such as DDT
+Compile the code with debug flag turned on:
 
-### C++
-
-```
-$ cd code_debugging/05_gdb
+```bash
+$ cd intro_debugging/05_gdb
 $ g++ -g -O0 -o serial_cpp serial.cpp
 ```
 
-```
+Here is the code that we have already encountered:
+
+```c++
 #include <iostream>
 
 int doubler(int num) {
