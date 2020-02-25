@@ -1,6 +1,6 @@
 # Pre-Workshop Directions
 
-###Point your browser to `https://bit.ly/2TiJexR`
+### Point your browser to `https://bit.ly/2TiJexR`
 
 To participate in the hands-on lessons one will need:
 
