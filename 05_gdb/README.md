@@ -90,7 +90,7 @@ Starting program: /home/jdh4/serial_cxx
 
 Breakpoint 1, main (argc=1, argv=0x7fffffffdef8) at serial_cxx.cpp:14
 14	  int mynum = 42;
-Missing separate debuginfos, use: debuginfo-install glibc-2.17-292.el7.x86_64 libgcc-4.8.5-39.el7.x86_64 libstdc++-4.8.5-39.el7.x86_64
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-292.el7.x86_64 ...
 
 (gdb) list
 9	  x[2] = y;
