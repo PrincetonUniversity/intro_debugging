@@ -66,19 +66,60 @@ Note that the file size of the executable increases when include `-g`. This is d
 Let's run the executable under the GDB debugger:
 
 ```bash
-$ gdb serial_cpp
+$ gdb serial_cxx
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
 ...
-Reading symbols from /home/jdh4/gdb_/mycode...done.
+Reading symbols from /home/jdh4/serial_cxx...done.
+(gdb) list
+5	}
+6	
+7	void myfunc(double* x, int N) {
+8	  double y = x[0] * x[1];
+9	  x[2] = y;
+10	}
+11	
+12	int main(int argc, char* argv[]) {
+13	
+14	  int mynum = 42;
+
+(gdb) break 14
+Breakpoint 1 at 0x4008df: file serial_cxx.cpp, line 14.
+
 (gdb) run
-Starting program: /home/jdh4/gdb_/mycode 
+Starting program: /home/jdh4/serial_cxx 
 
-Program received signal SIGFPE, Arithmetic exception.
-0x00000000004007ce in main (argc=1, argv=0x7fffffffe028) at mycode.cpp:6
-6	  std::cout << x / y << std::endl;
+Breakpoint 1, main (argc=1, argv=0x7fffffffdef8) at serial_cxx.cpp:14
+14	  int mynum = 42;
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-292.el7.x86_64 libgcc-4.8.5-39.el7.x86_64 libstdc++-4.8.5-39.el7.x86_64
+
+(gdb) list
+9	  x[2] = y;
+10	}
+11	
+12	int main(int argc, char* argv[]) {
+13	
+14	  int mynum = 42;
+15	  std::cout << mynum << " doubled is " << doubler(mynum) << std::endl;
+16	
+17	  size_t N = 5;
+18	  double x[5] = {10, 20, 30, 40, 50};
+
+(gdb) step
+15	  std::cout << mynum << " doubled is " << doubler(mynum) << std::endl;
+
+(gdb) 
+doubler (num=42) at serial_cxx.cpp:4
+4	  return 2 * num;
+
+(gdb) 
+5	}
+
+(gdb) 
+42 doubled is 84
+main (argc=1, argv=0x7fffffffdef8) at serial_cxx.cpp:17
+17	  size_t N = 5;
+...
 ```
-
-If you forget the `-g` then the error will not include the file name, line number or line.
 
 The most common GDB commands are:
 
@@ -102,16 +143,6 @@ The most common GDB commands are:
 + list - Print out lines in the source code around a line number, e.g., `(gdb) list 42`
 + [enter] - Hitting the [enter] key will execute the most recent previous command
 + quit - Quit `gdb`
-
-One can combine break and condition, e.g., `(gdb) break file1.c:6 if i >= ARRAYSIZE`. One can
-dereference pointers and print their contents. Use the run command to pass command line arguments and input files. If you have
-multiple files then for breakpoints use file:function. Breakpoints cause a break before executing the line.
-
-## What about a program composed of 2 files
-
-Set a break point in a specific routine not in main
-
-## Exercise on a larger code
 
 ## A Newer Version of GDB
 
