@@ -1,4 +1,4 @@
-"""There is no bug in this code."""
+"""There is no bug in this code. Add breakpoint() near line 10."""
 
 def myfunc(x, y):
   z = min(x, y)
