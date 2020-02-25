@@ -23,7 +23,7 @@ hostname
 Execute the script in standard mode:
 
 ```bash
-$ cd intro_debugging/04_bash ##############################
+$ cd intro_debugging/04_bash
 $ bash mybash.sh 42 43 44
 Number of command line parameters: 3
 All the command line parameters: 42 43 44
