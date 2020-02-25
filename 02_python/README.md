@@ -343,26 +343,6 @@ The program finished and will be restarted
 (Pdb) quit
 ```
 
-The list command shows breakpoints and the current line:
-
-```
-(Pdb) step
---Call--
-> /home/jdh4/pdb/myscript.py(7)doubler()
--> def doubler(u):
-(Pdb) list
-  2  	  def __init__(self, u):
-  3  	    self.u = u
-  4  	  def mysquare(self):
-  5  	    return self.u * self.u
-  6  	
-  7  ->	def doubler(u):
-  8  	  return 2 * u
-  9  	
- 10 B	def make_tuple(u):
- 11  	  return (u,)
-```
-
 Below are some common commands for PDB:
 
 ```
