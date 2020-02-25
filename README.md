@@ -7,7 +7,7 @@ This guide provides materials for learning how to debug interpreted (Python, R) 
 ## Debugging Resources
  
 [Python pdb](https://docs.python.org/3/library/pdb.html)  
-[Debuggin with RStudio](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio)  
+[Debugging with RStudio](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio)  
 [Debugging Jupyter Notebooks](https://davidhamann.de/2017/04/22/debugging-jupyter-notebooks/)  
 [GNU GDB](https://www.gnu.org/software/gdb/documentation/)  
 [Using DDT at Princeton](https://researchcomputing.princeton.edu/faq/debugging-with-ddt-on-the)  
