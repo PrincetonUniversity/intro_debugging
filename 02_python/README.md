@@ -226,6 +226,10 @@ mytriangle = RightTriangle(2.5, 7.0)
 print("triangle area = ", mytriangle.area())
 ```
 
+The second file contents are:
+
+
+
 Run the above script under the PDB debugger:
 
 ```bash
