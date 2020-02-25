@@ -1,5 +1,7 @@
 # Pre-Workshop Directions
 
+###Point your browser to `https://bit.ly/2TiJexR`
+
 To participate in the hands-on lessons one will need:
 
 - An account on Adroit, Perseus, Della or Tiger. If you do not have an account then complete [this form](https://forms.rc.princeton.edu/registration/?q=adroit) to get an account on Adroit.
