@@ -28,7 +28,7 @@ $ cd intro_debugging/02_python
 $ module load anaconda3
 ```
 
-Consider the following Python script:
+Consider the following Python script (`no_furniture.py`):
 
 ```python
 """This script should print a list of non-furniture objects in
