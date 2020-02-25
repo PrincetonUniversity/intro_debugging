@@ -104,7 +104,7 @@ y = 1 if x > 7 else -1
 print(myfunc(x, y))
 ```
 
-Insert the following line before the line `print(myfunc(x, y))` to halt execution and enter PDB:
+Insert the following line before `print(myfunc(x, y))` to halt execution and enter the PDB debugger:
 
 ```python
 breakpoint()
