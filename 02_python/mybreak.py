@@ -7,6 +7,4 @@ def myfunc(x, y):
 x = sum([1 for u in '4a9d9eeJz' if u.isalpha()])
 y = 1 if x > 7 else -1
 
-breakpoint()
-
 print(myfunc(x, y))
