@@ -66,16 +66,23 @@ In Python's interactive mode, after the exception is raised and the [stack trace
 If you have a Python script that is crashing, you can enter interactive mode after the crash to inspect variables with the `-i` option. This allows you to enter interactive mode to inspect a stack trace when a script raises an exception:
 
 ```bash
-$ python -i myscript.py 
+$ python -i no_furniture.py 
 Traceback (most recent call last):
-  File "myscript.py", line 2, in <module>
+  File "no_furniture.py", line 16, in <module>
     for item in items.sort():
 TypeError: 'NoneType' object is not iterable
 >>> items
-['cat', 'dog', 'fish', 'rattlesnake']
->>> items.sort()
+['book', 'door', 'pencil']
+>>> items.sort() 
+>>> help(list.sort)  # we see sort is in-place so it returns None  
 >>> exit()
 $
+```
+
+To correct the code we use the following line:
+
+```python
+for item in sorted(items):
 ```
 
 ## Using `breakpoint()`
