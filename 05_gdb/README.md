@@ -1,0 +1,149 @@
+# GDB on the Command Line
+
+The GNU project has produced its free and open source debugger called GDB. It is a powerful tool that is used by many IDE's
+and GUI's including DDT. It can be used for C/C++ and Fortran as well as other languages. We work on the command line here because it is always available to us even on supercomputing sites. Graphics are nice but you may encounter times when they cannot be used or the data rates is too slow to transfer graphics.
+
+## Example
+
+```c++
+#include <iostream>
+
+int main(int argc, char* argv[]) {
+  int x = 1;
+  int y = 0;
+  std::cout << "out" << std::endl;
+  return 0;
+}
+```
+
+```
+$ g++ -O3 -Wall -W -DNDEBUG -ffast-math -fwhole-program -march=native -mtune=native -o mycode mycode.cpp
+$ ./mycode
+Floating point exception
+```
+
+Note that when developing code you consider adding even more warning options such as `-Wconversion -Wshadow -Wcast-qual -Wwrite-strings`.
+
+At this point you may try inspecting the code and trying to work out the error. If this doesn't solve the problem
+and you decide to use a debugger then the next step is to recompile the code with the `-g` debug flag and optimization
+turned off:
+
+```
+$ g++ -g -O0 -o mycode mycode.cpp
+```
+
+For GCC one may consider also using `-Og` which produces as much optimization as possible without interfering with debugging.
+
+Let's debug the code using GDB. First recompile to include the debug flag and turn off compiler optimizations:
+
+
+Next we run the code to see if there is still an error:
+
+```
+$ ./mycode
+Floating point exception
+```
+
+Note that the file size of the executable increases when include `-g`. This is due the inclusion of the debugging symbols or source code into the executable.
+
+No change so let's use a debugger. In this case we will use the free and ubiquitious GDB debugger:
+
+```
+$ gdb mycode_debug
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
+...
+Reading symbols from /home/jdh4/gdb_/mycode...done.
+(gdb) run
+Starting program: /home/jdh4/gdb_/mycode 
+
+Program received signal SIGFPE, Arithmetic exception.
+0x00000000004007ce in main (argc=1, argv=0x7fffffffe028) at mycode.cpp:6
+6	  std::cout << x / y << std::endl;
+```
+
+If you forget the `-g` then the error will not include the file name, line number or line.
+
+The most common GDB commands are:
+
++ help - Show help info about a command, e.g., `(gdb) help breakpoints`
++ file - Used if you start `gdb` without giving it an executable, e.g., `(gdb) file mycode`
++ run - Run the executable under the debugger, e.g., `(gdb) run`
++ backtrace - Show the calling function and it inputs
++ break - Set a breakpoint at a function or by &lt;file&gt;:&lt;line&gt;, e.g., `(gdb) break energy.cpp:42`
++ info breakpoints - Shows information about all declared breakpoints
++ where - Similar to backtrace but works in the middle of the program
++ delete - Delete a breakpoint, e.g., `(gdb) delete 3`
++ continue - Proceed to the next breakpoint (must be used after `run` has been called)
++ finish - Run until the current function is finished
++ until - Continue execution until loop is finished
++ condition - Add a condition to a breakpoint, e.g., `(gdb) condition 1 x==10`
++ step - Step into the next line of code (i.e., execute the next line)
++ next - Same as step but will not follow functions, etc. (i.e., treat line as one instruction)
++ watch - Watchpoints pause the program when a watched variable changes, e.g., `(gdb) watch x`
++ set - Set a variable to a value, e.g., `(gdb) set var y=1`
++ print - Print out variables, e.g., `(gdb) print x`
++ list - Print out lines in the source code around a line number, e.g., `(gdb) list 42`
++ [enter] - Hitting the [enter] key will execute the most recent previous command
++ quit - Quit `gdb`
+
+One can combine break and condition, e.g., `(gdb) break file1.c:6 if i >= ARRAYSIZE`. One can
+dereference pointers and print their contents. Use the run command to pass command line arguments and input files. If you have
+multiple files then for breakpoints use file:function. Breakpoints cause a break before executing the line.
+
+## What about a program composed of 2 files
+
+Set a break point in a specific routine not in main
+
+## Exercise on a larger code
+
+## A Newer Version of GDB
+
+Load the `rh/devtoolset/8` module if you need a recent version of `gdb`, for example:
+
+```
+$ ssh adroit
+$ gdb --version
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
+...
+$ module load rh/devtoolset/8
+$ gdb --version
+GNU gdb (GDB) Red Hat Enterprise Linux 8.2-3.el7
+...
+```
+
+## Tips and GUIs
+
+For Emacs users, try using gdb by typing  M-x gdb. GDB is used by many graphical frontends and we cover this next.
+
+## Producing Core Files
+
+In some cases it is nice to produce core files when a program crashes. A core files stores all the memory associated with the running job at the time of the crash. These can be inspected in post. By default core files are not generated. To enable them one must enter this command in your Slurm script or ~/.bashrc file: `ulimit -c unlimited`
+
+```bash
+$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 766691
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 5120
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4096
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+```
+
+GDB can be used to inspect core files.
+
+## GDB Tutorials
+
++ [GDB Cheat Sheet](http://www.yolinux.com/TUTORIALS/GDB-Commands.html)  
++ [Debuggin Under Unix](https://www.cs.cmu.edu/~gilpin/tutorial/)   
++ [A Walkthrough with Examples](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
++ [Description of Common Commands](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=13&ved=2ahUKEwjKwYLd8rDnAhUOlXIEHSYjBNgQFjAMegQIAhAB&url=https%3A%2F%2Fweb.eecs.umich.edu%2F~sugih%2Fpointers%2Fsummary.html&usg=AOvVaw2cdI0D3acP_2CQ_-SII44B)
