@@ -128,8 +128,8 @@ print(myfunc(x, y))
 Run the code and step through after hitting the breakpoint:
 
 ```bash
-$ python mybreak.py 
-> /home/jdh4/mybreak.py(10)<module>()
+$ python mytest.py 
+> /home/jdh4/mytest.py(10)<module>()
 -> print(myfunc(x, y))
 (Pdb) ll
   1  	def myfunc(x, y):
@@ -142,30 +142,30 @@ $ python mybreak.py
   8  	breakpoint()
   9  	
  10  ->	print(myfunc(x, y))
-(Pdb) print(x)
+(Pdb) x
 6
-(Pdb) print(y)
+(Pdb) y
 -1
 (Pdb) step
 --Call--
-> /home/jdh4/mybreak.py(1)myfunc()
+> /home/jdh4/mytest.py(1)myfunc()
 -> def myfunc(x, y):
 (Pdb) step
-> /home/jdh4/mybreak.py(2)myfunc()
+> /home/jdh4/mytest.py(2)myfunc()
 -> z = min(x, y)
 (Pdb) step
-> /home/jdh4/mybreak.py(3)myfunc()
+> /home/jdh4/mytest.py(3)myfunc()
 -> return x**2 + y**2 + z**2
-(Pdb) print(z)
+(Pdb) z
 -1
 (Pdb) step
 --Return--
-> /home/jdh4/mybreak.py(3)myfunc()->38
+> /home/jdh4/mytest.py(3)myfunc()->38
 -> return x**2 + y**2 + z**2
 (Pdb) step
 38
 --Return--
-> /home/jdh4/mybreak.py(10)<module>()->None
+> /home/jdh4/mytest.py(10)<module>()->None
 -> print(myfunc(x, y))
 (Pdb) step
 ```
