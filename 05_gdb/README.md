@@ -43,40 +43,30 @@ int main(int argc, char* argv[]) {
 }
 ```
 
+For production jobs we would compile the code as follows:
+
 ```
-$ g++ -O3 -Wall -W -DNDEBUG -ffast-math -fwhole-program -march=native -mtune=native -o mycode mycode.cpp
-$ ./mycode
-Floating point exception
+$ g++ -O3 -Wall -W -DNDEBUG -ffast-math -fwhole-program -march=native -mtune=native -o serial_cpp serial.cpp
+$ ./serial_cpp
 ```
 
 Note that when developing code you consider adding even more warning options such as `-Wconversion -Wshadow -Wcast-qual -Wwrite-strings`.
 
-At this point you may try inspecting the code and trying to work out the error. If this doesn't solve the problem
-and you decide to use a debugger then the next step is to recompile the code with the `-g` debug flag and optimization
-turned off:
+For debugging the next step is to recompile the code with the `-g` debug flag and compiler optimizations turned off:
 
 ```
-$ g++ -g -O0 -o mycode mycode.cpp
+$ cd intro_debugging/05_gdb
+$ g++ -g -O0 -o serial_cpp serial.cpp
 ```
 
-For GCC one may consider also using `-Og` which produces as much optimization as possible without interfering with debugging.
-
-Let's debug the code using GDB. First recompile to include the debug flag and turn off compiler optimizations:
-
-
-Next we run the code to see if there is still an error:
-
-```
-$ ./mycode
-Floating point exception
-```
+For GCC one may consider also using `-Og` which produces as much optimization as possible without interfering with debugging. If compiling with `-g -O0` makes a bug go away then it suggests that compiler optimizations may be the cause of the problem.
 
 Note that the file size of the executable increases when include `-g`. This is due the inclusion of the debugging symbols or source code into the executable.
 
-No change so let's use a debugger. In this case we will use the free and ubiquitious GDB debugger:
+Let's run the executable under the GDB debugger:
 
-```
-$ gdb mycode_debug
+```bash
+$ gdb serial_cpp
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
 ...
 Reading symbols from /home/jdh4/gdb_/mycode...done.
