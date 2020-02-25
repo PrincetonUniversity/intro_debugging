@@ -1,0 +1,92 @@
+# ARM DDT
+
+DDT is a parallel debugger produced by ARM as part of ARM Forge. It is based on GDB.
+
+## General Procedure for Debugging a Compiled Code
+
+- Rebuild with `-g -O0`
+- Run the code
+- Run the code with a debugger such as DDT
+
+### C++
+
+```
+$ cd code_debugging/05_gdb
+$ g++ -g -O0 -o serial_cpp serial.cpp
+```
+
+```
+#include <iostream>
+
+int doubler(int num) {
+  return 2 * num;
+}
+
+void myfunc(double* x, int N) {
+  double y = x[0] * x[1];
+  x[2] = y;
+}
+
+int main(int argc, char* argv[]) {
+
+  int mynum = 42;
+  std::cout << mynum << " doubled is " << doubler(mynum) << std::endl;
+
+  size_t N = 5;
+  double x[5] = {10, 20, 30, 40, 50};
+  myfunc(x, N);
+  std::cout << "myfunc produced: " << x[2] << std::endl;
+
+  int A[N][N];
+  for (int i=0; i < N; i++)
+    for (int j=0; j < N; j++) {
+      A[i][j] = i * j + i + j;
+      if (i == j) std::cout << "diagonal element of A[i][j]: " << A[i][j] << std::endl;
+  }
+
+  int mysum = 0;
+  for (int i=0; i < 10; i++)
+    mysum = mysum + i;
+  std::cout << "mysum = " << mysum << std::endl;
+ 
+  return 0;
+}
+```
+
+### Hello World MPI Program
+
+Follow the procedure below to run a simple MPI job under the DDT debugger:
+
+```bash
+$ ssh -X adroit
+$ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
+$ cd hpc_beginning_workshop/example_jobs/parallel_cxx
+$ module load intel intel-mpi
+$ mpicxx -g -O0 hello_world_mpi.cpp
+$ salloc --nodes=2 --ntasks-per-node=4 --time=05:00 --x11
+$ module load intel intel-mpi  # load the modules a second time
+$ module load ddt/20.0.1
+$ ddt
+```
+
+![DDT screen](https://tigress-web.princeton.edu/~jdh4/ddt_mpi_hello_world.png)
+
+There is a Fortran 90 version in `hpc_beginning_workshop/example_jobs/parallel_fortran`.
+
+### CUDA Kernels
+
+DDT can be used to debug CUDA kernel functions. Here is the setup:
+
+```bash
+$ ssh -X adroit
+$ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
+$ cd hpc_beginning_workshop/example_jobs/simple_gpu_kernel
+$ salloc -N 1 -n 1 -t 10:00 --gres=gpu:tesla_k40c:1 --x11
+$ module load cudatoolkit/10.1
+$ nvcc -g -G hello_world_gpu.cu
+$ module load ddt/20.0.1
+$ export ALLINEA_FORCE_CUDA_VERSION=10.1
+$ ddt
+```
+
+The `-g` debugging flag is for CPU code while the `-G` flag is for GPU code. `-G` turns off compiler optimizations. Note that as of February 2020 CUDA Toolkit 10.2 is not supported.
