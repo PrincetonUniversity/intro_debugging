@@ -91,13 +91,26 @@ One better than interactive mode is adding the line `breakpoint()` to stop execu
 some line and then inspect variables and step through the remaining code. This is essentially adding a breakpoint
 or a point where execution should be halted so that the variables can be inspected.
 
-Insert the following line anywhere in your code to halt execution and enter PDB:
+Consider the following code snippet (`mybreak.py`):
+
+```python
+def myfunc(x, y):
+  z = min(x, y)
+  return x**2 + y**2 + z**2
+
+x = sum([1 for u in '4a9d9eeJz' if u.isalpha()])
+y = 1 if x > 7 else -1
+
+print(myfunc(x, y))
+```
+
+Insert the following line before the line `print(myfunc(x, y))` to halt execution and enter PDB:
 
 ```python
 breakpoint()
 ```
 
-Consider the following script (`mybreak.py`):
+Your script should now look like this:
 
 ```python
 def myfunc(x, y):
@@ -112,7 +125,7 @@ breakpoint()
 print(myfunc(x, y))
 ```
 
-We run the code and step through after hitting the breakpoint:
+Run the code and step through after hitting the breakpoint:
 
 ```bash
 $ python mybreak.py 
