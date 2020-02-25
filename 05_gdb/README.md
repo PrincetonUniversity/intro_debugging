@@ -66,7 +66,7 @@ Note that the file size of the executable increases when include `-g`. This is d
 Let's run the executable under the GDB debugger:
 
 ```
-$ gdb serial_cxx
+$ gdb serial_cpp
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
 ...
 Reading symbols from /home/jdh4/serial_cxx...done.
