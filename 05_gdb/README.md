@@ -161,7 +161,7 @@ GNU gdb (GDB) Red Hat Enterprise Linux 8.2-3.el7
 
 ## Tips and GUIs
 
-For Emacs users, try using gdb by typing  M-x gdb. GDB is used by many graphical frontends and we cover this next.
+For Emacs users, try using the command: `M-x gdb`. GDB is used by many graphical frontends and we cover this in the next directory.
 
 ## Producing Core Files
 
