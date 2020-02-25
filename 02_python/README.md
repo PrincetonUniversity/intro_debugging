@@ -228,29 +228,117 @@ Run the above script under the PDB debugger:
 
 ```bash
 $ python -m pdb multifile.py 
-> /home/jdh4/pdb/myscript.py(1)<module>()
--> items = ['cat', 'dog', 'rattlesnake', 'fish']
+> /home/jdh4/multifile.py(1)<module>()
+-> """There is no bug in this code."""
+(Pdb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF    c          d        h         list      q        rv       undisplay
+a      cl         debug    help      ll        quit     s        unt      
+alias  clear      disable  ignore    longlist  r        source   until    
+args   commands   display  interact  n         restart  step     up       
+b      condition  down     j         next      return   tbreak   w        
+break  cont       enable   jump      p         retval   u        whatis   
+bt     continue   exit     l         pp        run      unalias  where    
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+(Pdb) ll
+  1  ->	"""There is no bug in this code."""
+  2  	
+  3  	from MyShapes import RightTriangle
+  4  	
+  5  	def myfunc1(x, y , z):
+  6  	  mymin = min(x, y, z)
+  7  	  mymax = max(x, y, z)
+  8  	  return mymin * mymax
+  9  	
+ 10  	def myfunc2(x, y, mysum):
+ 11  	  z = myfunc1(x, y, mysum)
+ 12  	  return -z**2
+ 13  	
+ 14  	x = sum([1 for u in '4a9d9eeJz' if u.isalpha()])
+ 15  	y = 1 if x > 7 else -1
+ 16  	
+ 17  	mysum = 0
+ 18  	for i in range(10):
+ 19  	  mysum += i
+ 20  	
+ 21  	print("myfunc2 = ", myfunc2(x, y, mysum))
+ 22  	
+ 23  	mytriangle = RightTriangle(2.5, 7.0)
+ 24  	print("triangle area = ", mytriangle.area())
+ 
+(Pdb) break 17
+Breakpoint 1 at /home/jdh4/multifile.py:17
+
+(Pdb) continue
+> /home/jdh4/multifile.py(17)<module>()
+-> mysum = 0
+(Pdb) x
+6
+(Pdb) y
+-1
 
 (Pdb) step
-> /home/jdh4/pdb/myscript.py(2)<module>()
--> for item in items.sort():
-
-(Pdb) print(items)
-['cat', 'dog', 'rattlesnake', 'fish']
-
+> /home/jdh4/multifile.py(18)<module>()
+-> for i in range(10):
 (Pdb) step
-TypeError: 'NoneType' object is not iterable
-> /home/jdh4/pdb/myscript.py(2)<module>()
--> for item in items.sort():
+> /home/jdh4/multifile.py(19)<module>()
+-> mysum += i
+(Pdb) step
+> /home/jdh4/multifile.py(18)<module>()
+-> for i in range(10):
+(Pdb) step
+> /home/jdh4/multifile.py(19)<module>()
+-> mysum += i
+(Pdb) step
+> /home/jdh4/multifile.py(18)<module>()
+-> for i in range(10):
+(Pdb) i, mysum
+(1, 1)
 
-(Pdb) print(item)
-*** NameError: name 'item' is not defined
+(Pdb) until 21
+> /home/jdh4/multifile.py(21)<module>()
+-> print("myfunc2 = ", myfunc2(x, y, mysum))
 
-(Pdb) print(items)
-['cat', 'dog', 'fish', 'rattlesnake']
+(Pdb) next
+myfunc2 =  -2025
+> /home/jdh4/multifile.py(23)<module>()
+-> mytriangle = RightTriangle(2.5, 7.0)
 
-(Pdb) print(items.sort())
-None
+(Pdb) next
+> /home/jdh4/multifile.py(24)<module>()
+-> print("triangle area = ", mytriangle.area())
+(Pdb) step
+--Call--
+> /home/jdh4/MyShapes.py(5)area()
+-> def area(self):
+(Pdb) step
+> /home/jdh4/MyShapes.py(6)area()
+-> return 0.5 * self.base * self.height
+(Pdb) step
+--Return--
+> /home/jdh4/MyShapes.py(6)area()->8.75
+-> return 0.5 * self.base * self.height
+(Pdb) step
+triangle area =  8.75
+--Return--
+> /home/jdh4/multifile.py(24)<module>()->None
+-> print("triangle area = ", mytriangle.area())
+(Pdb) step
+--Return--
+> <string>(1)<module>()->None
+(Pdb) step
+> /usr/licensed/anaconda3/2019.10/lib/python3.7/bdb.py(589)run()
+-> self.quitting = True
+(Pdb) step
+The program finished and will be restarted
+> /home/jdh4/multifile.py(1)<module>()
+-> """There is no bug in this code."""
 
 (Pdb) quit
 ```
