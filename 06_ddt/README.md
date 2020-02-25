@@ -4,14 +4,7 @@ DDT is a graphical debugger produced by ARM as part of ARM Forge. It is based on
 
 ## Serial Code
 
-Compile the code with debug flag turned on:
-
-```bash
-$ cd intro_debugging/05_gdb
-$ g++ -g -O0 -o serial_cpp serial.cpp
-```
-
-Here is the code that we have already encountered:
+Here is the code that we encountered previously:
 
 ```c++
 #include <iostream>
@@ -49,6 +42,18 @@ int main(int argc, char* argv[]) {
  
   return 0;
 }
+```
+
+Run the executable using DDT:
+
+```bash
+$ ssh -X adroit
+$ git clone https://github.com/PrincetonUniversity/intro_debugging
+$ cd intro_debugging/05_gdb
+$ g++ -g -O0 -o serial_cpp serial.cpp
+$ salloc --nodes=1 --ntasks=1 --time=05:00 --x11
+$ module load ddt/20.0.1
+$ ddt
 ```
 
 ### Hello World MPI Program
