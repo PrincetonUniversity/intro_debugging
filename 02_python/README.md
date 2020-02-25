@@ -32,11 +32,12 @@ Consider the following Python script:
 
 ```python
 """This script should print a list of non-furniture objects in
-   alphabetical order."""
+   alphabetical order.""" 
 
 def remove_furniture(items):
   furniture = {'couch', 'table', 'desk', 'chair'}
-  furniture_removed = [item for item in items if item not in furniture]
+  items_furniture_removed = [item for item in items if item not in furniture]
+  return items_furniture_removed
 
 # input list of items
 items = ['book', 'pencil', 'desk', 'door']
