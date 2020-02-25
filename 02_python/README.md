@@ -55,9 +55,9 @@ Try running this script with the following commands:
 ```bash
 $ python no_furniture.py 
 Traceback (most recent call last):
-  File "no_furniture.py", line 15, in <module>
+  File "no_furniture.py", line 16, in <module>
     for item in items.sort():
-AttributeError: 'NoneType' object has no attribute 'sort'
+TypeError: 'NoneType' object is not iterable
 $
 ```
 
