@@ -46,8 +46,8 @@ int main(int argc, char* argv[]) {
 For production jobs we would compile the code as follows:
 
 ```
-$ g++ -O3 -Wall -W -DNDEBUG -ffast-math -fwhole-program -march=native -mtune=native -o serial_cpp serial.cpp
-$ ./serial_cpp
+$ g++ -O3 -Wall -W -DNDEBUG -ffast-math -fwhole-program -march=native -mtune=native -o serial_cxx serial.cpp
+$ ./serial_cxx
 ```
 
 Note that when developing code you consider adding even more warning options such as `-Wconversion -Wshadow -Wcast-qual -Wwrite-strings`.
@@ -56,7 +56,7 @@ For debugging the next step is to recompile the code with the `-g` debug flag an
 
 ```
 $ cd intro_debugging/05_gdb
-$ g++ -g -O0 -o serial_cpp serial.cpp
+$ g++ -g -O0 -o serial_cxx serial.cpp
 ```
 
 For GCC one may consider also using `-Og` which produces as much optimization as possible without interfering with debugging. If compiling with `-g -O0` makes a bug go away then it suggests that compiler optimizations may be the cause of the problem.
@@ -66,7 +66,7 @@ Note that the file size of the executable increases when include `-g`. This is d
 Let's run the executable under the GDB debugger:
 
 ```
-$ gdb serial_cpp
+$ gdb serial_cxx
 GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
 ...
 Reading symbols from /home/jdh4/serial_cxx...done.
