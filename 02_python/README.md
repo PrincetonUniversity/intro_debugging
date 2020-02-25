@@ -24,16 +24,39 @@ Before working with a Python debugger let's explore interactive mode. When we ru
 $ ssh -X adroit
 $ cd /scratch/network/<YourNetID>    # or /scratch/gpfs on Perseus, Della, Tiger
 $ git clone https://github.com/PrincetonUniversity/intro_debugging
-$ cd intro_debugging/01_python
+$ cd intro_debugging/02_python
 $ module load anaconda3
 ```
 
+Consider the following Python script:
+
+```python
+"""This script should print a list of non-furniture objects in
+   alphabetical order."""
+
+def remove_furniture(items):
+  furniture = {'couch', 'table', 'desk', 'chair'}
+  furniture_removed = [item for item in items if item not in furniture]
+
+# input list of items
+items = ['book', 'pencil', 'desk', 'door']
+
+# remove furniture objects from items
+items = remove_furniture(items)
+
+# print remaining items in alphabetical order
+for item in items.sort():
+  print(item)
+```
+
+Try running this script with the following commands:
+
 ```bash
-$ python myscript.py
+$ python no_furniture.py 
 Traceback (most recent call last):
-  File "myscript.py", line 2, in <module>
+  File "no_furniture.py", line 15, in <module>
     for item in items.sort():
-TypeError: 'NoneType' object is not iterable
+AttributeError: 'NoneType' object has no attribute 'sort'
 $
 ```
 
