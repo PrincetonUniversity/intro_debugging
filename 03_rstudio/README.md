@@ -1,7 +1,7 @@
 # Debugging in RStudio
 
 Start RStudio on either [https://myadroit.princeton.edu](https://myadroit.princeton.edu)
-or [https://mydella.princeton.edu](https://mydella.princeton.edu). Open the sample script `intro_debuggin/rstudio/myscript.R`
+or [https://mydella.princeton.edu](https://mydella.princeton.edu). Open the sample script `intro_debugging/03_rstudio/myscript.R`
 by choosing File then Open in the main menu.
 
 ![rstudio](https://tigress-web.princeton.edu/~jdh4/rstudio_two_frames.png)
@@ -24,7 +24,7 @@ cat("count: ", count, "\n")
 cat("myfunc: ", myfunc(count))
 ```
 
-After RStudio loads, choose File then Open and choose `intro_debuggin/rstudio/myscript.R`. Click on Source to run the script. It should output the following in the Console:
+After RStudio loads, choose File then Open and choose `intro_debugging/03_rstudio/myscript.R`. Click on Source to run the script. It should output the following in the Console:
 
 ```
 > source('~/myscript.R')
