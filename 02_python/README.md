@@ -343,6 +343,14 @@ The program finished and will be restarted
 (Pdb) quit
 ```
 
+Exercises:
+
+- Set a breakpoint at line 17, run `cont` and inspect the values of `x` and `y` then `quit`.  
+- Set a breakpoint at line 21, run `cont` then `step` then `quit`. Repeat using `next` instead of `step`.
+- Set a conditional breakpoint at line 19 where `i>6` (see `help break`). Use the `break` command to see all breakpoints. Run with `cont` and test that it worked by printing `i` then `quit`.  
+- Set a breakpoint at line 7 then run `where` to see the backtrace then `quit`.  
+- Set a breakpoint at line 17 and do `cont`. Use `display` to watch the product of `i` and `mysum` within the loop (see `help display`).  
+
 Below are some common commands for PDB:
 
 ```
@@ -417,13 +425,6 @@ display [expression]
 
         Without expression, list all display expressions for the current frame.
 ```
-
-Exercises:
-
-- Set a breakpoint at line 22, run `cont` and inspect the values of `x` and `y` then `quit`.  
-- Set a conditional breakpoint at line 24 where `i>6`. The type `break` to see all breakpoints. Run with `contd` and test that it worked by printing `i` then `quit`.  
-- Use `display` to watch the product of `i` and `mysum` within the loop.  
-- Set a breakpoint at line x then use `where` or equivalently `bt` to see the backtrace.  
 
 ## Using PDB on the HPC Clusters
 
