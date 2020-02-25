@@ -179,25 +179,13 @@ See the `browser()` function in R for something analogous to Python's `breakpoin
 
 PDB is the Python debug engine. It can be used directly on the command line or through an IDE like PyCharm or Spider.
 
-```
-(Pdb) help
+Use this command to run a Python script under PDB:
 
-Documented commands (type help <topic>):
-========================================
-EOF    c          d        h         list      q        rv       undisplay
-a      cl         debug    help      ll        quit     s        unt      
-alias  clear      disable  ignore    longlist  r        source   until    
-args   commands   display  interact  n         restart  step     up       
-b      condition  down     j         next      return   tbreak   w        
-break  cont       enable   jump      p         retval   u        whatis   
-bt     continue   exit     l         pp        run      unalias  where    
-
-Miscellaneous help topics:
-==========================
-exec  pdb
+```bash
+$ python -m pdb <myscript.py>
 ```
 
-Call the following `myscript.py`:
+Consider the following code (`multifile.py`):
 
 ```python
 """There is no bug in this code."""
@@ -225,10 +213,16 @@ print("myfunc2 = ", myfunc2(x, y, mysum))
 mytriangle = RightTriangle(2.5, 7.0)
 print("triangle area = ", mytriangle.area())
 ```
+The contents of `MyShapes.py` are:
 
-The second file contents are:
-
-
+```python
+class RightTriangle(object):
+  def __init__(self, base, height):
+    self.base = base
+    self.height = height
+  def area(self):
+    return 0.5 * self.base * self.height
+```
 
 Run the above script under the PDB debugger:
 
