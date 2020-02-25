@@ -440,6 +440,9 @@ $ python -m pdb myscript.py
 
 ## Debugging Jupyter Notebooks
 
+Jupyter notebooks are available on either [https://myadroit.princeton.edu](https://myadroit.princeton.edu)
+or [https://mydella.princeton.edu](https://mydella.princeton.edu).
+
 If you encounter an error then put `%debug` in a cell to use iPDB. 
 
 ![jupyter](https://tigress-web.princeton.edu/~jdh4/jupyter_debug.png)
