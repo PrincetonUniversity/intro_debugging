@@ -56,7 +56,7 @@ $ module load ddt/20.0.1
 $ ddt
 ```
 
-### Hello World MPI Program
+## Hello World MPI Program
 
 Follow the procedure below to run a simple MPI job under the DDT debugger:
 
@@ -76,7 +76,7 @@ $ ddt
 
 There is a Fortran 90 version in `hpc_beginning_workshop/RC_example_jobs/parallel_fortran`.
 
-### CUDA Kernels
+## CUDA Kernels
 
 DDT can be used to debug CUDA kernel functions. Here is the setup:
 
