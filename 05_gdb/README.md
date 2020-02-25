@@ -165,7 +165,7 @@ For Emacs users, try using gdb by typing  M-x gdb. GDB is used by many graphical
 
 ## Producing Core Files
 
-In some cases it is nice to produce core files when a program crashes. A core files stores all the memory associated with the running job at the time of the crash. These can be inspected in post. By default core files are not generated. To enable them one must enter this command in your Slurm script or ~/.bashrc file: `ulimit -c unlimited`
+In some cases it is nice to produce core files when a program crashes. A core files stores all the memory associated with the running job at the time of the crash. These can be inspected in post. By default core files are not generated. To enable them one must enter this command in your Slurm script or `~/.bashrc` file: `ulimit -c unlimited`
 
 ```bash
 $ ulimit -a
@@ -187,7 +187,7 @@ virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 ```
 
-GDB can be used to inspect core files.
+GDB can be used to inspect core files: `$ gdb a.out core`. This is similar to running a failing Python script using the `-i` option.
 
 ## GDB Tutorials
 
