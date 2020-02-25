@@ -425,25 +425,6 @@ The video below explains how to run the PyCharm debugger on a TigerGPU node. The
 
 PyCharm for Linux is available [here](https://www.jetbrains.com/pycharm/download/#section=linux). While the video uses the Community Edition, you can get the professional edition for free by supplying your `.edu` email address.
 
-## Multi-file Projects
-
-Run the folling commands to see the failure then try to find the bug:
-
-```bash
-$ ssh adroit
-$ git clone repo
-$ cd intro_debugging/02_python/multi
-$ module load anaconda3
-$ python myscript
-# this will give an error
-```
-
-## Advanced Cases
-
-+ pybind11 or mixed language programming
-+ parallel python
-
-
 ## Useful Links
 
 [PDB on Python.org](https://docs.python.org/3/library/pdb.html)
