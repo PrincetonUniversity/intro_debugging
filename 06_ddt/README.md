@@ -63,7 +63,7 @@ Follow the procedure below to run a simple MPI job under the DDT debugger:
 ```bash
 $ ssh -X adroit
 $ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
-$ cd hpc_beginning_workshop/example_jobs/parallel_cxx
+$ cd hpc_beginning_workshop/RC_example_jobs/parallel_cxx
 $ module load intel intel-mpi
 $ mpicxx -g -O0 hello_world_mpi.cpp
 $ salloc --nodes=2 --ntasks-per-node=4 --time=05:00 --x11
