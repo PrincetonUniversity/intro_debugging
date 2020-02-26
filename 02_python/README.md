@@ -129,7 +129,7 @@ Run the code and step through after hitting the breakpoint:
 
 ```bash
 $ python mybreak.py 
-> /home/jdh4/mytest.py(10)<module>()
+> /home/ceisgrub/mybreak.py(10)<module>()
 -> print(myfunc(x, y))
 (Pdb) ll
   1  	def myfunc(x, y):
@@ -148,24 +148,24 @@ $ python mybreak.py
 -1
 (Pdb) step
 --Call--
-> /home/jdh4/mybreak.py(1)myfunc()
+> /home/ceisgrub/mybreak.py(1)myfunc()
 -> def myfunc(x, y):
 (Pdb) step
-> /home/jdh4/mybreak.py(2)myfunc()
+> /home/ceisgrub/mybreak.py(2)myfunc()
 -> z = min(x, y)
 (Pdb) step
-> /home/jdh4/mybreak.py(3)myfunc()
+> /home/ceisgrub/mybreak.py(3)myfunc()
 -> return x**2 + y**2 + z**2
 (Pdb) z
 -1
 (Pdb) step
 --Return--
-> /home/jdh4/mybreak.py(3)myfunc()->38
+> /home/ceisgrub/mybreak.py(3)myfunc()->38
 -> return x**2 + y**2 + z**2
 (Pdb) step
 38
 --Return--
-> /home/jdh4/mybreak.py(10)<module>()->None
+> /home/ceisgrub/mybreak.py(10)<module>()->None
 -> print(myfunc(x, y))
 (Pdb) step
 ```
@@ -228,7 +228,7 @@ Run the above script under the PDB debugger:
 
 ```bash
 $ python -m pdb multifile.py 
-> /home/jdh4/multifile.py(1)<module>()
+> /home/ceisgrub/multifile.py(1)<module>()
 -> """There is no bug in this code."""
 (Pdb) help
 
@@ -273,10 +273,10 @@ exec  pdb
  24  	print("triangle area = ", mytriangle.area())
  
 (Pdb) break 17
-Breakpoint 1 at /home/jdh4/multifile.py:17
+Breakpoint 1 at /home/ceisgrub/multifile.py:17
 
 (Pdb) continue
-> /home/jdh4/multifile.py(17)<module>()
+> /home/ceisgrub/multifile.py(17)<module>()
 -> mysum = 0
 (Pdb) x
 6
@@ -284,50 +284,50 @@ Breakpoint 1 at /home/jdh4/multifile.py:17
 -1
 
 (Pdb) step
-> /home/jdh4/multifile.py(18)<module>()
+> /home/ceisgrub/multifile.py(18)<module>()
 -> for i in range(10):
 (Pdb) step
-> /home/jdh4/multifile.py(19)<module>()
+> /home/ceisgrub/multifile.py(19)<module>()
 -> mysum += i
 (Pdb) step
-> /home/jdh4/multifile.py(18)<module>()
+> /home/ceisgrub/multifile.py(18)<module>()
 -> for i in range(10):
 (Pdb) step
-> /home/jdh4/multifile.py(19)<module>()
+> /home/ceisgrub/multifile.py(19)<module>()
 -> mysum += i
 (Pdb) step
-> /home/jdh4/multifile.py(18)<module>()
+> /home/ceisgrub/multifile.py(18)<module>()
 -> for i in range(10):
 (Pdb) i, mysum
 (1, 1)
 
 (Pdb) until 21
-> /home/jdh4/multifile.py(21)<module>()
+> /home/ceisgrub/multifile.py(21)<module>()
 -> print("myfunc2 = ", myfunc2(x, y, mysum))
 
 (Pdb) next
 myfunc2 =  -2025
-> /home/jdh4/multifile.py(23)<module>()
+> /home/ceisgrub/multifile.py(23)<module>()
 -> mytriangle = RightTriangle(2.5, 7.0)
 
 (Pdb) next
-> /home/jdh4/multifile.py(24)<module>()
+> /home/ceisgrub/multifile.py(24)<module>()
 -> print("triangle area = ", mytriangle.area())
 (Pdb) step
 --Call--
-> /home/jdh4/MyShapes.py(5)area()
+> /home/ceisgrub/MyShapes.py(5)area()
 -> def area(self):
 (Pdb) step
-> /home/jdh4/MyShapes.py(6)area()
+> /home/ceisgrub/MyShapes.py(6)area()
 -> return 0.5 * self.base * self.height
 (Pdb) step
 --Return--
-> /home/jdh4/MyShapes.py(6)area()->8.75
+> /home/ceisgrub/MyShapes.py(6)area()->8.75
 -> return 0.5 * self.base * self.height
 (Pdb) step
 triangle area =  8.75
 --Return--
-> /home/jdh4/multifile.py(24)<module>()->None
+> /home/ceisgrub/multifile.py(24)<module>()->None
 -> print("triangle area = ", mytriangle.area())
 (Pdb) step
 --Return--
@@ -337,7 +337,7 @@ triangle area =  8.75
 -> self.quitting = True
 (Pdb) step
 The program finished and will be restarted
-> /home/jdh4/multifile.py(1)<module>()
+> /home/ceisgrub/multifile.py(1)<module>()
 -> """There is no bug in this code."""
 
 (Pdb) quit
