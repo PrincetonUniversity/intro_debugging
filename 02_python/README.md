@@ -489,7 +489,7 @@ Note that you can use `nbconvert` to convert a Jupyter notebook to a flat Python
 
 ## PyCharm
 
-A popular Python IDE is [PyCharm](https://www.jetbrains.com/pycharm/). Try running the code above using PyCharm's graphical debugger interface.
+A popular Python IDE is [PyCharm](https://www.jetbrains.com/pycharm/). Try running the code above using PyCharm's graphical debugger interface. Note that PyCharm will create two directories: `PycharmProjects/ .PyCharmCE2019.3/`
 
 ## Using the PyCharm Debugger on the HPC Clusters
 
