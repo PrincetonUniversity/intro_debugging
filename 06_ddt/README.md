@@ -76,6 +76,8 @@ $ ddt
 
 There is a Fortran 90 version in `hpc_beginning_workshop/RC_example_jobs/parallel_fortran`.
 
+On Traverse, set the MPI/UPC Implementation to SLURM (generic) by choosing Options then System.
+
 ## CUDA Kernels
 
 DDT can be used to debug CUDA kernel functions. Here is the setup:
