@@ -2,7 +2,7 @@
 
 ## About
 
-This guide provides materials for learning how to debug interpreted (Python, R) and compiled (C/C++, Fortran) code. The DDT parallel debugger is also covered.
+This guide provides materials for learning how to debug interpreted (Python, R) and compiled (C/C++, Fortran) code. Demonstrations of using DDT to debug parallel code and CUDA kernels are presented.
 
 ## Debugging Resources
  
