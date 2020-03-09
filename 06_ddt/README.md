@@ -83,10 +83,10 @@ On Traverse, set the MPI/UPC Implementation to SLURM (generic) by choosing Optio
 DDT can be used to debug CUDA kernel functions. Here is the setup:
 
 ```bash
-$ ssh -X <NetID>@adroit.princeton.edu
+$ ssh -X <YourNetID>@adroit.princeton.edu  # tigergpu or traverse
 $ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
 $ cd hpc_beginning_workshop/RC_example_jobs/simple_gpu_kernel
-$ salloc -N 1 -n 1 -t 10:00 --gres=gpu:tesla_k40c:1 --x11
+$ salloc -N 1 -n 1 -t 10 --gres=gpu:1 --x11
 $ module load cudatoolkit/10.1
 $ nvcc -g -G hello_world_gpu.cu
 $ module load ddt/20.0.1
