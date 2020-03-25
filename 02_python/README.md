@@ -14,7 +14,7 @@ Instead, force unbuffered output:
 print(myvar, flush=True)
 ```
 
-One could also write the output to a file to avoid buffering of print statements. But the best approach is to use a debugger.
+One could also use `python -u myscript.py` which forces stdin, stdout and stderr to be unbuffered or even write the output to a file to avoid buffering of print statements. But the best approach is to use a debugger.
 
 ## Interactive Mode
 
