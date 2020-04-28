@@ -500,6 +500,79 @@ The video below explains how to run the PyCharm debugger on a TigerGPU node. The
 
 PyCharm for Linux is available [here](https://www.jetbrains.com/pycharm/download/#section=linux). While the video uses the Community Edition, you can get the professional edition for free by supplying your `.edu` email address.
 
+## Debugging parallel codes
+
+```
+[jdh4@tigergpu mpi4py]$ salloc -N 1 -n 3 -t 5
+[jdh4@tigergpu mpi4py]$ module load anaconda3 openmpi/gcc/3.1.3/64
+[jdh4@tiger-h20c1n11 mpi4py]$ conda activate fast-mpi4py
+(fast-mpi4py) [jdh4@tiger-h20c1n11 mpi4py]$ srun python -m pdb hello_world.py
+> /home/jdh4/mpi4py/hello_world.py(6)<module>()
+-> from mpi4py import MPI
+> /home/jdh4/mpi4py/hello_world.py(6)<module>()
+-> from mpi4py import MPI
+> /home/jdh4/mpi4py/hello_world.py(6)<module>()
+-> from mpi4py import MPI
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(7)<module>()
+-> import sys
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(7)<module>()
+-> import sys
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(7)<module>()
+-> import sys
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(9)<module>()
+-> def print_hello(rank, size, name):
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(9)<module>()
+-> def print_hello(rank, size, name):
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(9)<module>()
+-> def print_hello(rank, size, name):
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(13)<module>()
+-> if __name__ == "__main__":
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(13)<module>()
+-> if __name__ == "__main__":
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(13)<module>()
+-> if __name__ == "__main__":
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(14)<module>()
+-> size = MPI.COMM_WORLD.Get_size()
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(14)<module>()
+-> size = MPI.COMM_WORLD.Get_size()
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(14)<module>()
+-> size = MPI.COMM_WORLD.Get_size()
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(15)<module>()
+-> rank = MPI.COMM_WORLD.Get_rank()
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(15)<module>()
+-> rank = MPI.COMM_WORLD.Get_rank()
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(15)<module>()
+-> rank = MPI.COMM_WORLD.Get_rank()
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(16)<module>()
+-> name = MPI.Get_processor_name()
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(16)<module>()
+-> name = MPI.Get_processor_name()
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(16)<module>()
+-> name = MPI.Get_processor_name()
+print(size)
+(Pdb) 3
+(Pdb) 3
+(Pdb) 3
+print(rank)
+(Pdb) 0
+(Pdb) 1
+(Pdb) 2
+next
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(18)<module>()
+-> print_hello(rank, size, name)
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(18)<module>()
+-> print_hello(rank, size, name)
+(Pdb) > /home/jdh4/mpi4py/hello_world.py(18)<module>()
+-> print_hello(rank, size, name)
+quit
+```
+
 ## Useful Links
 
 [PDB on Python.org](https://docs.python.org/3/library/pdb.html)
