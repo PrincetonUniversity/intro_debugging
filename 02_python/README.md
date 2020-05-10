@@ -403,6 +403,10 @@ l(ist) [first [,last] | .]
         If an exception is being debugged, the line where the
         exception was originally raised or propagated is indicated by
         ">>", if it differs from the current line.
+        
+(Pdb) help return        
+r(eturn)
+        Continue execution until the current function returns.
 
 (Pdb) help where
 w(here)
