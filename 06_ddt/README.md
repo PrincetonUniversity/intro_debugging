@@ -1,6 +1,6 @@
 # ARM DDT
 
-DDT is a graphical debugger produced by ARM as part of ARM Forge. It is based on GDB. DDT can be used for serial, parallel and GPU codes.
+[DDT](https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/arm-ddt) is a graphical debugger produced by ARM as part of ARM Forge. It is based on GDB. DDT can be used for serial, parallel and GPU codes.
 
 ## Serial Code
 
