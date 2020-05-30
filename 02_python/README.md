@@ -506,6 +506,8 @@ PyCharm for Linux is available [here](https://www.jetbrains.com/pycharm/download
 
 ## Debugging parallel codes
 
+See [this page](https://researchcomputing.princeton.edu/mpi4py) then:
+
 ```
 [jdh4@tigergpu mpi4py]$ salloc -N 1 -n 3 -t 5
 [jdh4@tigergpu mpi4py]$ module load anaconda3 openmpi/gcc/3.1.3/64
@@ -575,6 +577,14 @@ next
 (Pdb) > /home/jdh4/mpi4py/hello_world.py(18)<module>()
 -> print_hello(rank, size, name)
 quit
+```
+
+## PDB in Color
+
+Make a Conda environment with the `ipython` and `ipdb` packages then:
+
+```
+$ ipython -m ipdb run_graph_net_nv.py
 ```
 
 ## Useful Links
