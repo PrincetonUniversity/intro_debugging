@@ -442,6 +442,16 @@ $ module load anaconda3
 $ python -m pdb myscript.py
 ```
 
+## pudb
+
+For a terminal-based GUI try [pudb](https://github.com/inducer/pudb):
+
+```
+$ conda activate myenv
+$ conda install -c conda-forge pudb
+$ python -m pudb myscript.py
+```
+
 ## Debugging Jupyter Notebooks
 
 Jupyter notebooks are available on either [https://myadroit.princeton.edu](https://myadroit.princeton.edu)
