@@ -4,13 +4,20 @@
 
 To participate in the hands-on lessons one will need:
 
-- An account on Adroit, Perseus, Della or Tiger. If you do not have an account then complete [this form](https://forms.rc.princeton.edu/registration/?q=adroit) to get an account on Adroit.
 - A laptop with sufficient battery power and the ability to connect to the eduroam wireless network.
+- Local install of Anaconda, R and RStudio.  
+- An account on Adroit, Perseus, Della or Tiger. If you do not have an account then complete [this form](https://forms.rc.princeton.edu/registration/?q=adroit) to get an account on Adroit.
 - The ability to Duo authenticate.
+
+## Locally Install Anaconda, R and RStudio
+
+The workshop will show participants how to use Jupyter and PyCharm debugger and RStudio. It is recommended to install these locally instead of trying to access them over the network.
+
+Instructions to install can be found here: https://researchcomputing.princeton.edu/education/training/virtual-workshop-requirements  
 
 ## Using Applications with GUIs on the HPC Clusters
 
-In addition to Jupyter and RStudio, this workshop will show participants how to use the PyCharm debugger and DDT. Run the test below to see if your laptop is available to use GUIs on the cluster. If the directions below fail for you then you can still use the command-line tools and watch the demos. You could also try using TurboVNC as discussed at the bottom of this page.
+ and DDT. Run the test below to see if your laptop is available to use GUIs on the cluster. If the directions below fail for you then you can still use the command-line tools and watch the demos. You could also try using TurboVNC as discussed at the bottom of this page.
 
 ### Linux
 
@@ -42,7 +49,7 @@ Try using [MobaXterm](https://mobaxterm.mobatek.net/) (Home Edition). Visit the 
 
 ## TurboVNC
 
-If the directions above fail and you have an acount on Tiger, Della or Perseus, then consider installing [TurboVNC](https://researchcomputing.princeton.edu/faq/how-do-i-use-vnc-on-tigre). In this case your goal is to use graphical applications on tigressdata. Visit the [OIT Tech Store](https://princeton.service-now.com/snap?id=kb_article&sys_id=ea2a27064f9ca20018ddd48e5210c771) for resolving issues with installing and configuring this software.
+If the directions above fail and you have an account on Tiger, Della or Perseus, then consider installing [TurboVNC](https://researchcomputing.princeton.edu/faq/how-do-i-use-vnc-on-tigre). In this case your goal is to use graphical applications on tigressdata. Visit the [OIT Tech Store](https://princeton.service-now.com/snap?id=kb_article&sys_id=ea2a27064f9ca20018ddd48e5210c771) for resolving issues with installing and configuring this software.
 
 ```bash
 $ ssh -Y <YourNetID>@tigressdata.princeton.edu
