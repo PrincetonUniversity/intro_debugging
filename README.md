@@ -34,4 +34,4 @@ If you encounter any difficulties when debugging your code on our HPC clusters t
 
 ## Authorship
 
-This workshop was created by Stéphane Ethier. Contributions to the workshop material have been made by Jonathan Halverson.
+This workshop was created by Stéphane Ethier, Jonathan Halverson and Abhishek Biswas.
