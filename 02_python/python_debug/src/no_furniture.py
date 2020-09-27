@@ -6,12 +6,11 @@ def remove_furniture(items):
   items_furniture_removed = [item for item in items if item not in furniture]
   return items_furniture_removed
 
-# input list of items
-items = ['book', 'pencil', 'desk', 'door']
-
-# remove furniture objects from items
-items = remove_furniture(items)
-
-# print remaining items in alphabetical order
-for item in items.sort():
-  print(item)
+if __name__ == '__main__':
+  # input list of items
+  items = ['book', 'pencil', 'desk', 'door']
+  # remove furniture objects from items
+  items = remove_furniture(items)
+  # print remaining items in alphabetical order
+  for item in items.sort():
+    print(item)

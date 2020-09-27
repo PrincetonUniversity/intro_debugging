@@ -1,6 +1,14 @@
-"""There is no bug in this code."""
+"""There is no bug in this code. Add breakpoint() near line 10."""
 
-from MyShapes import RightTriangle
+def myfunc(x, y):
+  z = min(x, y)
+  return x**2 + y**2 + z**2
+
+x = sum([1 for u in '4a9d9eeJz' if u.isalpha()])
+y = 1 if x > 7 else -1
+
+print(myfunc(x, y))
+
 
 def myfunc1(x, y , z):
   mymin = min(x, y, z)
@@ -19,6 +27,3 @@ for i in range(10):
   mysum += i
 
 print("myfunc2 = ", myfunc2(x, y, mysum))
-
-mytriangle = RightTriangle(2.5, 7.0)
-print("triangle area = ", mytriangle.area())
