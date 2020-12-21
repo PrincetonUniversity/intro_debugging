@@ -1,15 +1,18 @@
-# Pre-Workshop Directions
+# Pre-Workshop Local Install Directions
 
-The workshop will show participants how to use Jupyter and PyCharm debugger for Python and RStudio for R. The workshop is 
-geared toward those who have had at least some exposure to coding or scripting. 
+This guide will help you setup your local environment for participating in the hands on exercises for the following 2 workshops:
 
-### Point your browser to `https://bit.ly/2TiJexR`
+1. 	**Code Debugging in Python and R:** The workshop will show participants how to use Jupyter and PyCharm debugger for Python and RStudio for R. The workshop is 
+geared toward those who have had at least some exposure to coding or scripting.
+      
+2. **Code Profiling in Python and R:** The workshop will show participants how to use Jupyter and PyCharm to profile Python code and profile with RStudio for R. 
+The "Code Debugging in Python and R" is not necessarily required for this workshop but is recommended for easier continuity.  
 
 To participate in the hands-on lessons one will need:
 
-- A laptop with sufficient battery power and the ability to connect to the eduroam wireless network.
+- A laptop with sufficient battery power and Princeton account to join the Zoom conference call.
 - Local install of Anaconda, PyCharm, R, and RStudio.  
-- Create conda environment using the environment.yml
+- Create conda environment using the environment.yml.
 
 ## Locally Install Required Tools
 
@@ -20,7 +23,7 @@ major operating systems, and the appropriate versions should be downloaded and i
 
 Anaconda is a package and environment manager primarily used for python. 
 1. Download installer and install: https://www.anaconda.com/products/individual
-2. Download the environment file: 
+2. Download the environment file: https://bit.ly/3phm9dn 
 3. Open the OS commandline interface and navigate to the directory where the environment.yml is saved. 
 4. Run command: ```conda env create -f environment.yml```
 
@@ -32,6 +35,6 @@ PyCharm is a popular Integrated Development Environment(IDE) for better code man
 
 ### Install R and RStudio
 
-R is a statistical software 
+R is a statistical software with a command line interface. RStudio provides a convenient GUI interface to run R commands and scripts.  
 1. Instructions to install can be found here: https://researchcomputing.princeton.edu/education/training/virtual-workshop-requirements#rstudio  
 
