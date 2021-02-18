@@ -25,7 +25,7 @@ $ ssh -X adroit
 $ cd /scratch/network/<YourNetID>    # or /scratch/gpfs on Perseus, Della, Tiger
 $ git clone https://github.com/PrincetonUniversity/intro_debugging
 $ cd intro_debugging/02_python
-$ module load anaconda3
+$ module load anaconda3/2020.11
 ```
 
 Consider the following Python script (`no_furniture.py`):
