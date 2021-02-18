@@ -438,7 +438,7 @@ Short debugging sessions using PDB can be carried out on the head node. For sess
 ```bash
 $ ssh della
 $ salloc --nodes=1 --ntasks=1 --time=01:00:00 --mem=4G
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ python -m pdb myscript.py
 ```
 
