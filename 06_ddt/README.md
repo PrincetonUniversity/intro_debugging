@@ -64,10 +64,10 @@ Follow the procedure below to run a simple MPI job under the DDT debugger:
 $ ssh -X adroit
 $ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
 $ cd hpc_beginning_workshop/RC_example_jobs/parallel_cxx
-$ module load intel intel-mpi
+$ module load intel/19.1/64/19.1.1.217 intel-mpi/intel/2019.7/64
 $ mpicxx -g -O0 hello_world_mpi.cpp
 $ salloc --nodes=2 --ntasks-per-node=4 --time=05:00 --x11
-$ module load intel intel-mpi  # load the modules a second time
+$ module load intel/19.1/64/19.1.1.217 intel-mpi/intel/2019.7/64  # load the modules a second time
 $ module load ddt/20.0.1
 $ ddt
 ```
