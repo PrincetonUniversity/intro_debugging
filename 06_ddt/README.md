@@ -61,7 +61,7 @@ $ ddt
 Follow the procedure below to run a simple MPI job under the DDT debugger:
 
 ```bash
-$ ssh -X adroit
+$ ssh -X <YourNetID>@adroit.princeton.edu
 $ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
 $ cd hpc_beginning_workshop/RC_example_jobs/cxx/parallel
 $ module load intel/19.1/64/19.1.1.217 intel-mpi/intel/2019.7/64
