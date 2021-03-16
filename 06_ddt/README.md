@@ -75,7 +75,7 @@ $ ddt
 
 There is a Fortran 90 version in `hpc_beginning_workshop/RC_example_jobs/parallel_fortran`.
 
-On Stellar and Traverse, set the MPI/UPC Implementation to "SLURM (generic)" in the System Settings by choosing "Change" from the main window.
+On Stellar and Traverse, set the MPI/UPC Implementation to "SLURM (generic)" in the System Settings by choosing "Change..." from the main window.
 
 ## CUDA Kernels
 
