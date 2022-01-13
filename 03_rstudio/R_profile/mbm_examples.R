@@ -36,7 +36,6 @@ temp_sorts = microbenchmark(
 )
 temp_sorts
 
-flightsDT = data.table(flights)
 mbm_flights = microbenchmark(
   base = aggregate(flights$arr_delay, by=list(flights$carrier), mean, na.rm=TRUE),
   sqldf = sqldf("SELECT carrier, avg(arr_delay) FROM flights GROUP BY carrier"),
