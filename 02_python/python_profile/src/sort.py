@@ -2,7 +2,7 @@
 import random
 from time import time
 import pandas as pd
-
+import sys
 
 def create_rand_list(size, min, max):
     rand_list = []
@@ -43,6 +43,7 @@ def divide_sort(sort_list):
             sort_list[i] = R[r_idx]
             r_idx = r_idx + 1
             i = i + 1
+    return sort_list
 
 def sneaky_sort(sort_list):
     max_val = int(max(sort_list))
@@ -69,15 +70,28 @@ def sneaky_sort(sort_list):
 
 if __name__ == '__main__':
 
+    if len(sys.argv) < 2:
+        print("Please specify a sort type (snail_sort, divide_sort, sneaky_sort).")
+        exit(1)
+
+    sort_type = sys.argv[1]
     problem_size = 2
     df_exe = pd.DataFrame(columns=['size', 'time'])
-    for x in range(32):
+    for x in range(24):
         sort_list = create_rand_list(problem_size, 0, 10000)
         start = time()
-        sneaky_sort(sort_list)
+        if sort_type == 'sneaky_sort':
+            sneaky_sort(sort_list)
+        elif sort_type == 'snail_sort':
+            snail_sort(sort_list)
+        elif sort_type == 'divide_sort':
+            divide_sort(sort_list)
+        else:
+            print("Invalid sort type specified. Defaulting to sneaky_sort.")
+            sneaky_sort(sort_list)
         end = time()
         print(f'Sort took {round(end - start, 4)} seconds for {problem_size} numbers.')
         df_exe = df_exe.append(pd.Series([problem_size, round(end - start, 4)], index=df_exe.columns),
                                ignore_index=True)
         problem_size = problem_size * 2
-    df_exe.to_csv('growth.csv', index=False)
+    df_exe.to_csv(sort_type + '_growth.csv', index=False)
