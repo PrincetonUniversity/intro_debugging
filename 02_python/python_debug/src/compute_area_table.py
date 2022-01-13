@@ -2,6 +2,9 @@ import pandas as pd
 
 from src.MyShapes import *
 
+"""
+Program to load some shapes and compute area/surface area
+"""
 if __name__ == '__main__':
     fname = "../metadata/area_calc.csv"
     df_dimension = pd.read_csv(fname,header=None)

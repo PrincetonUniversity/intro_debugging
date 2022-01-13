@@ -44,5 +44,5 @@ def test_cone_volume():
 def test_pyramid_volume():
     shape_obj = RectangularPyramid(3.0, 5.0, 7.0)
     vol_value = shape_obj.volume()
-    assert vol_value == 35
+    assert vol_value == 35.0000
 
