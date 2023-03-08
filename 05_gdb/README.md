@@ -165,7 +165,7 @@ For Emacs users, try using the command: `M-x gdb`. GDB is used by many graphical
 
 ## Producing Core Files
 
-In some cases it is nice to produce core files when a program crashes. A core files stores all the memory associated with the running job at the time of the crash. These can be inspected in post. By default core files are not generated. To enable them one must enter this command in your Slurm script or `~/.bashrc` file: `ulimit -c unlimited`
+In some cases it is nice to produce core files when a program crashes. A core file stores all the memory associated with the running job at the time of the crash. These files can be inspected in post. By default on our systems, core files are not generated. To enable them one must enter this command in your Slurm script or `~/.bashrc` file: `ulimit -c unlimited`
 
 ```bash
 $ ulimit -a
