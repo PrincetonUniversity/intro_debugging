@@ -80,7 +80,7 @@ if __name__ == '__main__':
     sort_type = sys.argv[1]
     problem_size = 2
     df_exe = pd.DataFrame(columns=['size', 'time'])
-    for x in range(24):
+    for x in range(20):
         sort_list = create_rand_list(problem_size, 0, 10000)
         start = time()
         if sort_type == 'sneaky_sort':

@@ -39,7 +39,6 @@ def better_search(search_list, query):
                 first = mid + 1
     return False
 
-@profile
 def list_searching(search_list, query_list, search_func):
     found_ctr = 0
     search_list.sort()
