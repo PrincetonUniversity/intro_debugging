@@ -10,23 +10,23 @@ dependencies:
   - wheel
   - zlib
   - pip:
-    - atomicwrites==1.4.0
-    - attrs==20.3.0
-    - colorama==0.4.4
-    - guppy3==3.1.0
-    - iniconfig==1.1.1
-    - memory-profiler==0.58.0
-    - numpy==1.19.4
-    - packaging==20.8
-    - pandas==1.1.5
-    - pluggy==0.13.1
-    - psutil==5.8.0
-    - py==1.10.0
-    - pyparsing==2.4.7
+    - atomicwrites
+    - attrs
+    - colorama
+    - guppy3
+    - iniconfig
+    - memory-profiler
+    - numpy
+    - packaging
+    - pandas
+    - pluggy
+    - psutil
+    - py
+    - pyparsing
     - pytest==6.2.1
-    - python-dateutil==2.8.1
-    - pytz==2020.4
-    - six==1.15.0
-    - toml==0.10.2
-    - pdbpp==0.10.3
+    - python-dateutil
+    - pytz
+    - six
+    - toml
+    - pdbpp
     - line_profiler 
