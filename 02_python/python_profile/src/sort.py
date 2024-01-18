@@ -18,6 +18,7 @@ def snail_sort(sort_list):
                 sort_list[j], sort_list[j + 1] = sort_list[j + 1], sort_list[j]
     return sort_list
 
+@profile
 def divide_sort(sort_list):
     if len(sort_list) > 1:
         mid = len(sort_list) // 2
@@ -46,6 +47,7 @@ def divide_sort(sort_list):
             i = i + 1
     return sort_list
 
+@profile
 def sneaky_sort(sort_list):
     max_val = int(max(sort_list))
     min_val = int(min(sort_list))
