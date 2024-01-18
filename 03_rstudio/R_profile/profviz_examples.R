@@ -1,6 +1,3 @@
-packages <- c("microbenchmark","tidyverse","nycflights13","sqldf","dlnm","profvis")
-install.packages(setdiff(packages, rownames(installed.packages())))  
-
 library(microbenchmark)
 library(tidyverse)
 library(nycflights13)
