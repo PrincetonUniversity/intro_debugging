@@ -73,7 +73,7 @@ $ ddt
 
 ![DDT screen](https://tigress-web.princeton.edu/~jdh4/ddt_mpi_hello_world.png)
 
-There is a Fortran 90 version in `hpc_beginning_workshop/RC_example_jobs/parallel_fortran`.
+There is a Fortran 90 version in `hpc_beginning_workshop/fortran/parallel`.
 
 On Stellar and Traverse, set the MPI/UPC Implementation to "SLURM (generic)" in the System Settings by choosing "Change..." from the main window.
 
