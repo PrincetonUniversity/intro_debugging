@@ -10,6 +10,7 @@ def create_rand_list(size, min, max):
         rand_list.append(random.randint(min, max))
     return rand_list
 
+@profile
 def snail_sort(sort_list):
     for i in range(len(sort_list)):
         for j in range(len(sort_list) - 1):

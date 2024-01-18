@@ -17,7 +17,7 @@ def load_hpi(hpi_file):
     return hpi_dict
 
 """
-A program to sum the area of all the triangles in 10000_triangle_area_calc.csv
+A program to generate the sum of a portfolio
 """
 if __name__ == '__main__':
     portfolio_file = '../metadata/rmbs_portfolio.csv'

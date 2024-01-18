@@ -1,6 +1,6 @@
 """There is no bug in this code."""
 
-from src.MyShapes import RightTriangle
+from .src.MyShapes import RightTriangle
 
 
 """

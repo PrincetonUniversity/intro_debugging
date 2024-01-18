@@ -1,5 +1,5 @@
 import pytest
-from src.MyShapes import *
+from ..src.MyShapes import *
 
 def test_triangle_area():
     shape_obj = RightTriangle(2.5, 7.0)

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.MyShapes import *
+from MyShapes import *
 
 """
 Program to load some shapes and compute area/surface area

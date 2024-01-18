@@ -29,3 +29,4 @@ dependencies:
     - six==1.15.0
     - toml==0.10.2
     - pdbpp==0.10.3
+    - line_profiler 
