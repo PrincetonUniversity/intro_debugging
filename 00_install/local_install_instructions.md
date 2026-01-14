@@ -1,14 +1,32 @@
-# Pre-Workshop Local Install Directions
+# Pre-Workshop Local/Remote Install Directions
 
-This guide will help you setup your local environment for participating in the hands on exercises for **Debugging and Profiling Code in Python**. The workshop will show participants how to use commandline and Visual Syudio Code debugger for Python.  workshop will also cover profiling of Python code.
+This guide will help you setup your local environment for participating in the hands on exercises for **Debugging and Profiling Code in Python**. The workshop will show participants how to use commandline and Visual Syudio Code debugger for Python. The workshop will also cover techniques for profiling CPU and memory usage in Python.
 
 To participate in the hands-on lessons one will need:
 
 - A laptop with sufficient battery power. 
-- Local install of Git, Miniconda and Visual Studio Code.
-OR
-- Remote access using OnDemand is available for users with a Princeton Net ID account and access to Adroit teaching cluster.     
+- Remote access using OnDemand is available for users with a Princeton Net ID account and access to Adroit teaching cluster. 
+
+OR 
+
+- Local install of Git, Miniconda and Visual Studio Code.      
 - Create a conda environment using the environment.yml.
+
+## Remote Access to Adroit and Setup
+
+If you prefer not to locally install anything please follow the steps in the link below to check if you have access to Adroit and request access if needed. 
+
+https://researchcomputing.princeton.edu/systems/adroit#How-to-Access-the-Adroit-Cluster 
+
+### Install the Conda Environment on Adroit 
+
+1. Login to https://myadroit.princeton.edu 
+2. Go to the ```Clusters``` tab and click on the ```Adroit Cluster Shell Access``` menu
+3. Use the command ```git clone https://github.com/PrincetonUniversity/intro_debugging.git``` to download the code repository
+4. Navigate to the directory where the environment.yml is saved: ```cd  intro_debugging/00_install```
+5. Load the anaconda module: ```module load anaconda3/2025.12```
+5. Run command to install required environment: ```conda env create -f environment.yml```
+
 
 ## Locally Install Required Tools
 
@@ -17,7 +35,7 @@ major operating systems, and the appropriate versions should be downloaded and i
 
 ### Local Install of Miniconda
 
-Anaconda is a package and environment manager commonly used for python. However, it is very large and has lot of packages not necessary for this workshop. If you have Anaconda installed already please skip this step.
+Anaconda is a package and environment manager commonly used for python. However, it is very large and has lot of packages not necessary for this workshop. If you have Anaconda installed already skip this step.
 
 Otherwise, follow the steps in the link below to install miniconda a smaller lighweight install with just necessary packages. 
 
@@ -39,19 +57,7 @@ https://git-scm.com/install
 
 ### Local Install of Visual Studio Code
 
-## Remote Access to Adroit
+Follow the steps here to install VS Code: https://code.visualstudio.com/download 
 
-If you prefer not to locally install anything please follow the steps in the link below to check if you have access to Adroit and request access if needed. 
-
-https://researchcomputing.princeton.edu/systems/adroit#How-to-Access-the-Adroit-Cluster 
-
-### Install the Conda Environment on Adroit 
-
-1. Login to https://myadroit.princeton.edu 
-2. Go to the ```Clusters``` tab and click on the ```Adroit Cluster Shell Access``` menu
-3. Use the command ```git clone https://github.com/PrincetonUniversity/intro_debugging.git``` to download the code repository
-4. Navigate to the directory where the environment.yml is saved: ```cd  intro_debugging/00_install```
-5. Load the anaconda module: ```module load anaconda3/2025.12```
-5. Run command to install required environment: ```conda env create -f environment.yml```
 
 
