@@ -8,13 +8,11 @@ This guide provides materials for learning how to debug interpreted (Python, R) 
  
 [Python pdb](https://docs.python.org/3/library/pdb.html)  
 [Debugging with RStudio](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio)  
-[Debugging Jupyter Notebooks](https://davidhamann.de/2017/04/22/debugging-jupyter-notebooks/)  
 [GNU GDB](https://www.gnu.org/software/gdb/documentation/)  
 [Using DDT at Princeton](https://researchcomputing.princeton.edu/faq/debugging-with-ddt-on-the)  
-[Arm DDT](https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/arm-ddt)  
-[Arm DDT User Guide](https://developer.arm.com/docs/101136/latest/ddt)  
-[Arm DDT Getting Started](https://developer.arm.com/docs/101136/latest/ddt/getting-started)  
-[Arm DDT Video Tutorials](https://developer.arm.com/tools-and-software/server-and-hpc/debug-and-profile/arm-forge/resources/videos)   
+[Linaro DDT Documentation](https://www.linaroforge.com/download-documentation#documentation)  
+[Using MAP at Princeton](https://researchcomputing.princeton.edu/support/knowledge-base/map-profiler)  
+[Linaro MAP Documentation](https://www.linaroforge.com/download-documentation)  
 [Valgrind](http://valgrind.org)  
 
 <!--
