@@ -3,11 +3,11 @@ import random
 import pandas as pd
 
 def create_10000_traingles(op_file):
-  df_triag = pd.DataFrame(columns=['name','base','hieght'])
+  df_triag = pd.DataFrame(columns=['name','base','height'])
   for x in range(10000):
     base = random.randint(10, 100)
-    hieght = random.randint(10, 100)
-    df_triag = df_triag.append(pd.Series([x,base,hieght],index=df_triag.columns), ignore_index=True)
+    height = random.randint(10, 100)
+    df_triag = df_triag.append(pd.Series([x,base,height],index=df_triag.columns), ignore_index=True)
   df_triag.to_csv(op_file,index=False)
 
 def sum_triangles(inp_file):
@@ -16,8 +16,8 @@ def sum_triangles(inp_file):
   for index, row in df_triag.iterrows():
     name = row[0]
     base = float(row[1])
-    hieght = float(row[2])
-    mytriangle = RightTriangle(base, hieght)
+    height = float(row[2])
+    mytriangle = RightTriangle(base, height)
     sum_area = sum_area + mytriangle.area()
   print("triangle area sum = {} ".format(sum_area))
 
@@ -25,6 +25,6 @@ def sum_triangles(inp_file):
 A program to sum the area of all the triangles in 10000_triangle_area_calc.csv
 """
 if __name__ == '__main__':
-  sum_triangles('../metadata/10000_triangle_area_calc.csv')
+  sum_triangles('./metadata/10000_triangle_area_calc.csv')
 
 

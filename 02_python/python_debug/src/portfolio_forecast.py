@@ -9,8 +9,8 @@ def load_hpi(hpi_file):
         f_hpi.readline()
         for line in f_hpi:
             str_tok = line.split(sep=',')
-            zipcode = np.int(str_tok[0].strip() or 0)
-            period = np.int(str_tok[1].strip() or 0)
+            zipcode = int(str_tok[0].strip() or 0)
+            period = int(str_tok[1].strip() or 0)
             hpi_index = np.float64(str_tok[2].strip() or 0)
             if zipcode not in hpi_dict:
                 hpi_dict[zipcode] = {}
@@ -20,8 +20,8 @@ def load_hpi(hpi_file):
 A program to compute a weighted sum of forecasted price of a property portfolio in 5 years time
 """
 if __name__ == '__main__':
-    hpi_file = '../metadata/hpi.csv'
-    portfolio_file = '../metadata/rmbs_portfolio.csv'
+    hpi_file = './metadata/hpi.csv'
+    portfolio_file = './metadata/rmbs_portfolio.csv'
     hpi_dict = load_hpi(hpi_file)
     forecast_time = 120
     current_total = 0
@@ -32,8 +32,8 @@ if __name__ == '__main__':
         for line in f_portfolio:
             # Split the string and extract the values
             str_tok = line.split(sep=',')
-            current_price = np.int(str_tok[0].strip() or 0)
-            zipcode = np.int(str_tok[1].strip() or 0)
+            current_price = int(str_tok[0].strip() or 0)
+            zipcode = int(str_tok[1].strip() or 0)
             own_pct = np.float64(str_tok[2].strip() or 0)
 
             # Calculate the current value of the asset and its contribution to the portfolio

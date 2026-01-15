@@ -94,7 +94,7 @@ if __name__ == '__main__':
             sneaky_sort(sort_list)
         end = time()
         print(f'Sort took {round(end - start, 4)} seconds for {problem_size} numbers.')
-        df_exe = df_exe.append(pd.Series([problem_size, round(end - start, 4)], index=df_exe.columns),
-                               ignore_index=True)
+        new_row = pd.Series([problem_size, round(end - start, 4)], index=df_exe.columns)
+        df_exe = pd.concat([df_exe, new_row.to_frame().T], ignore_index=True)
         problem_size = problem_size * 2
     df_exe.to_csv(sort_type + '_growth.csv', index=False)
